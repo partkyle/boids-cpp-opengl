@@ -122,6 +122,10 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods
 		{
 			platform::internal::setButtonState(platform::Button::Tab, state);
 		}
+		if (key == GLFW_KEY_LEFT_SHIFT || key == GLFW_KEY_RIGHT_SHIFT)
+		{
+			platform::internal::setButtonState(platform::Button::Shift, state);
+		}
 	}
 	
 };
@@ -324,8 +328,8 @@ int main()
 #endif
 
 
-	int w = 500;
-	int h = 500;
+	int w = 1920;
+	int h = 1080;
 	wind = glfwCreateWindow(w, h, "geam", nullptr, nullptr);
 	glfwMakeContextCurrent(wind);
 	glfwSwapInterval(1);
